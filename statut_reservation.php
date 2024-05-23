@@ -24,10 +24,10 @@
 </head>
 <body>
 <header>
-        <h1>Gestion des utilisateurs</h1>
+        <h1>Statut des réservations</h1>
         <nav>
             <ul>
-            <li><a href="index.html #header">Accueil</a></li>
+                <li><a href="index.html #header">Accueil</a></li>
                 <li><a href="index.html #contact">Contact</a></li>
                 <li><a href="index.html #flotte">Flotte</a></li>
                 <li><a href="index.html #services">Services</a></li>
@@ -42,44 +42,36 @@
     <?php
 include 'base.php'; // Assurez-vous que ce fichier contient vos informations de connexion
 
-$sql = "SELECT ID_UTILISATEUR, TYPE_UTILISATEUR, NOM_USER, PRENOM_USER, MDP_USER, COURRIEL_USER FROM utilisateur"; // Modifié selon la partie de la base de base de données
+$sql = "SELECT ID_TAXI, ID_UTILISATEUR, ID_TYPE_TARIF, LIEU_DE_DEPART, LIEU_D_ARRIVE, DATE_DEPART, HEURE_DEPART FROM reservation ORDER BY ID_UTILISATEUR ASC"; // Modifié selon la partie de la base de base de données
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<table>
             <tr>
+                <th>ID_TAXI</th>
                 <th>ID_UTILISATEUR</th>
-                <th>TYPE_UTILISATEUR</th>
-                <th>NOM_USER</th>
-                <th>PRENOM_USER</th>
-                <th>MDP_USER</th>
-                <th>COURRIEL_USER</th>
+                <th>ID_TYPE_TARIF</th>
+                <th>LIEU_DE_DEPART</th>
+                <th>LIEU_D_ARRIVE</th>
+                <th>DATE_DEPART</th>
+                <th>HEURE_DEPART</th>
             </tr>";
     while($row = $result->fetch_assoc()) {
         echo "<tr>
+                <td>".$row["ID_TAXI"]."</td>
                 <td>".$row["ID_UTILISATEUR"]."</td>
-                <td>".$row["TYPE_UTILISATEUR"]."</td>
-                <td>".$row["NOM_USER"]."</td>
-                <td>".$row["PRENOM_USER"]."</td>
-                <td>".$row["MDP_USER"]."</td>
-                <td>".$row["COURRIEL_USER"]."</td>
+                <td>".$row["ID_TYPE_TARIF"]."</td>
+                <td>".$row["LIEU_DE_DEPART"]."</td>
+                <td>".$row["LIEU_D_ARRIVE"]."</td>
+                <td>".$row["DATE_DEPART"]."</td>
+                <td>".$row["HEURE_DEPART"]."</td>
                 <td>
-                    <form method='post' action='update_user_type.php'>
-                        <input type='hidden' name='ID_UTILISATEUR' value='".$row["ID_UTILISATEUR"]."'>
-                        <select name='TYPE_UTILISATEUR'>
-                            <option value='Client'>Client</option>
-                            <option value='Chauffeur'>Chauffeur</option>
-                            <option value='Admin'>Admin</option>
-                        </select>
-                        <input type='submit' value='Mettre à jour'>
-                    </form>
-                </td>
-            </tr>";
-    }
-    echo "</table>";
-} else {
-    echo "0 résultats";
-}
+                </tr>";
+        }
+        echo "</table>";
+        } else {
+        echo "0 résultats";
+        }
 
 $conn->close();
 ?>

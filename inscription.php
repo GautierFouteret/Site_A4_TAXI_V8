@@ -10,7 +10,7 @@
         <h1>Inscription</h1>
         <nav>
             <ul>
-                <li><a href="index.html #header">Accueil</a></li>
+            <li><a href="index.html #header">Accueil</a></li>
                 <li><a href="index.html #contact">Contact</a></li>
                 <li><a href="index.html #flotte">Flotte</a></li>
                 <li><a href="index.html #services">Services</a></li>
@@ -18,6 +18,7 @@
                 <li><a href="inscription.php">Inscription</a></li>
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="gestion_utilisateur.php">Gérer un utilisateur</a></li>
+                <li><a href="statut_reservation.php">Statut des réservations</a></li>
             </ul>
         </nav>
     </header>

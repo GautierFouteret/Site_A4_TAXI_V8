@@ -15,7 +15,7 @@ include 'fonction_calcul_tarif.php'; // Inclusion du fichier de calcul des tarif
         <h1>Réservation A4 Taxi</h1>
         <nav>
             <ul>
-                <li><a href="index.html #header">Accueil</a></li>
+            <li><a href="index.html #header">Accueil</a></li>
                 <li><a href="index.html #contact">Contact</a></li>
                 <li><a href="index.html #flotte">Flotte</a></li>
                 <li><a href="index.html #services">Services</a></li>
@@ -23,6 +23,7 @@ include 'fonction_calcul_tarif.php'; // Inclusion du fichier de calcul des tarif
                 <li><a href="inscription.php">Inscription</a></li>
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="gestion_utilisateur.php">Gérer un utilisateur</a></li>
+                <li><a href="statut_reservation.php">Statut des réservations</a></li>
             </ul>
         </nav>
     </header>
@@ -70,21 +71,21 @@ include 'fonction_calcul_tarif.php'; // Inclusion du fichier de calcul des tarif
 
                     <label for="ID_TAXI">Taxi</label>
                     <select id="ID_TAXI" name="ID_TAXI">
-                        <option>1</option> 
-                        <option>2</option>
-                        <option>3</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                    </select><br>
+                        <option>1 : XYZ123</option> 
+                        <option>2 : ABC456</option>
+                        <option>3 : LMN789</option>
+                        <option>8 : ABC001</option>
+                        <option>9 : XYZ002</option>
+                        <option>10 : DEF003</option>
+                    </select><br><br>
 
-                    <label for="ID_TYPE_TARIF">Tarif :<br>1 = Aller-retour entre 7h et 19h </br><br> 2 = Aller-retour entre 19h et 7h </br><br> 3 = Aller OU retour entre 7h et 19h </br><br> 4 = Aller OU retour entre 19h et 7h</br></label>
+                    <label for="ID_TYPE_TARIF">Choix des conditions de trajet : </label>
                     <select id="ID_TYPE_TARIF" name="ID_TYPE_TARIF">
-                        <option>1</option> 
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select><br>
+                        <option>1 = Aller-retour entre 7h et 19h</option> 
+                        <option>2 = Aller-retour entre 19h et 7h</option>
+                        <option>3 = Aller OU retour entre 7h et 19h</option>
+                        <option> 4 = Aller OU retour entre 19h et 7h</option>
+                    </select><br><br>
                     
                     <input type="submit" value="Enregistrer">
                 </fieldset>

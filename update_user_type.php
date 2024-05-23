@@ -16,3 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+<p> 
+<br>
+-> <a href="gestion_utilisateur.php">Retourner à la gestion des utilisateurs </a><br>
+</p>
